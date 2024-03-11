@@ -19,16 +19,22 @@ package com.android.kprofiles.battery;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
+import com.android.settingslib.collapsingtoolbar.R;
 
 public class KprofilesSettingsActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG_KPROFILES = "kprofiles";
+    private static final String TAG = "kprofiles";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new KprofilesSettingsFragment(), TAG_KPROFILES).commit();
+
+        getFragmentManager()
+            .beginTransaction()
+            .replace(
+                R.id.content_frame,
+                new KprofilesSettingsFragment(),
+                TAG
+            ).commit();
     }
 }
